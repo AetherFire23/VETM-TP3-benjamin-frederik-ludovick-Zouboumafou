@@ -14,3 +14,4 @@ Ludovick Tanguay 2410734
 https://github.com/AetherFire23?tab=repositories
 
 [https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/boards/1](https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/summary?atlOrigin=eyJpIjoiZmRhMGEyODIyMTU3NDE4M2EyZjM4YmE2MWFjYjdjNjMiLCJwIjoiaiJ9)
+
