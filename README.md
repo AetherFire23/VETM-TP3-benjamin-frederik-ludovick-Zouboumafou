@@ -5,4 +5,4 @@ Nous faisons un jeu de cooke clicker où il est possible de cliquer sur un biscu
 # membres de lequipe
 Benjamin Turcotte 2243891
 Frederik richer balthazard 2410658
-
+Ludovick Tanguay 2410734
