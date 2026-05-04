@@ -5,9 +5,11 @@ On load les scripts simplement a partir du import
 import "./buttonClick.ts"
 
 /*
-On load le css a partir du cookie.
+On load le css a partir du import
  */
 import "./styles/cookie.css"
+
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center"> 
@@ -17,6 +19,4 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <div class="ticks"></div>
 <section id="spacer"></section>
 `;
-
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
