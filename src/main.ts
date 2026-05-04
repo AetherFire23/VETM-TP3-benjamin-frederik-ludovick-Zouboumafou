@@ -1,12 +1,22 @@
 import './style.css'
-import {setupCounter} from './counter.ts'
+/*
+On load les scripts simplement a partir du import
+ */
+import "./buttonClick.ts"
+
+/*
+On load le css a partir du cookie.
+ */
+import "./styles/cookie.css"
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center"> 
-    <button> Cookie </button>
+    <button id="cookie-button" class="cookie-style"> Cookie </button>
 </section>
+<div id="counter"> 0 </div>
 <div class="ticks"></div>
 <section id="spacer"></section>
-`
+`;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
