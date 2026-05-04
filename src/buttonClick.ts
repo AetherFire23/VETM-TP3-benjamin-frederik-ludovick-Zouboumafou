@@ -18,7 +18,7 @@ function getCookieButtonElement() {
 function setupObservableClickHandler() {
     const cookieButton = getCookieButtonElement();
 
-    cookieButton.addEventListener('click', (e) => {
+    cookieButton.addEventListener('click', (_) => {
         console.log("CLickO! ")
     })
 }

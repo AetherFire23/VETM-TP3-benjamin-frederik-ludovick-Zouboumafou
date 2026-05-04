@@ -1,0 +1,17 @@
+.shop-window {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    /*Place at cneter of screen*/
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-list {
+    background-color: brown;
+}

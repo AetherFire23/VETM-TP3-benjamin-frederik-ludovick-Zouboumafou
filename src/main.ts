@@ -5,17 +5,23 @@ On load les scripts simplement a partir du import
 import "./buttonClick.ts"
 
 /*
+Pour le click handler / observable, il faut sassurer de launcher nos script APRES le script buttonClick pour pas runner no script
+apres l'incremation du coutner.
+ */
+
+import "././shop/ShopController"
+/*
 On load le css a partir du import
  */
 import "./styles/cookie.css"
 
 
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>('#app')!.innerHTML += `
 <section id="center"> 
     <button id="cookie-button" class="cookie-style"> Cookie </button>
 </section>
 <div id="counter"> 0 </div>
+<div id="shop-div"/>
 <div class="ticks"></div>
 <section id="spacer"></section>
 `;
