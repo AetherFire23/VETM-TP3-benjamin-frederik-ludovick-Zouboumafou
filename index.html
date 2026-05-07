@@ -1,13 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>coocie-cliccer</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+</head>
+<body>
+<div id="app">
+    <div id="main-container">
+        <div id="money-div">
+            <div>cookie-money: <span id="money-span"></span></div>
+            <div>choco-money: <span id="choco-money-span"></span></div>
+        </div>
+        <div id="hp-div">
+            hp: <span id="hp-span"></span>
+        </div>
+        <div id="cookie-button" class="cookie-style"> </div>
+        <div>
+            <div>play</div>
+            <div>stop</div>
+            <div>choose</div>
+            <div>help</div>
+        </div>
+    </div>
+    <div id="shop-div">
+        <div class="shop-window">
+            <h2> WElcome to mad max 3</h2>
+            <div> Upgrades for almost everyone ;P</div>
+            <ul id="shop-list">
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+<!--<script type="module" src="/src/shop/shopHtml/shopDisplay.ts"></script>-->
+</body>
 </html>

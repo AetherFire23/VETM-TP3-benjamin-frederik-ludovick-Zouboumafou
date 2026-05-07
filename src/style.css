@@ -11,6 +11,8 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(19, 19, 19);
+    color: white;
 }
 
 body * {
@@ -28,3 +30,30 @@ ol, ul {
     list-style: none outside none;
 }
 
+#app {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+}
+#money-div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#hp-div {
+
+}
+
+#cookie-button {
+
+}
+
+#shop-div {
+
+}

@@ -1,8 +1,9 @@
 .cookie-style {
-    background-image: url("../assets/sprites/biscuit/cookie1.jpg");
     background-size: cover;
     width: 14rem;
     height: 14rem;
     background-image: url("../assets/sprites/Sprite-0001.png");
+}
 
+.cookie-style:hover {
 }
