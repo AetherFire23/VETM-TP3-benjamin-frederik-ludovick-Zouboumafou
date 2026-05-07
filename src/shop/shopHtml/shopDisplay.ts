@@ -6,14 +6,14 @@ const show = new Shop();
 
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("shop-div")!.innerHTML = `
-    <div class="shop-window"> 
+    <div class="shop-window">
+    <div class="exit-shop-button"> X </div> 
     <ul id="shop-list">
-    
     </ul>
     </div>
 `;
 
-    document.getElementById("shop-div")!.innerHTML = ``;
+    showUpgradeList();
 
 });
 
@@ -21,17 +21,22 @@ window.addEventListener("DOMContentLoaded", () => {
 function showUpgradeList() {
     const shopList = document.getElementById("shop-list")!;
 
-    const upgrades = show.getAvailableUpgrades().map(x=> createUpgradeElement(x))
-    shopList.appendChild(upgrades)
+    const upgrades = show.getAvailableUpgrades().map(x => createUpgradeElement(x))
 
+    upgrades.forEach(upgradeElement => {
+        shopList.appendChild(upgradeElement);
+    })
 }
 
-function createUpgradeElement(upgrade: IUpgrade) {
+function createUpgradeElement(upgrade: IUpgrade): HTMLLIElement {
     function onUpgradeClick() {
         console.log(upgrade);
     }
 
-    const upgradeLi = document.createElement("li");
+    const upgradeLi: HTMLLIElement = document.createElement("li");
+    upgradeLi.innerText = upgrade.name
 
     upgradeLi.addEventListener("click", () => onUpgradeClick());
+
+    return upgradeLi;
 }
