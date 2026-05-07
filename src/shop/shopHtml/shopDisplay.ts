@@ -4,7 +4,9 @@ import type {IUpgrade} from "../models/IUpgrade.ts";
 
 const show = new Shop();
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", onDomContentLoaded);
+
+function onDomContentLoaded() {
     document.getElementById("shop-div")!.innerHTML = `
     <div class="shop-window">
     <div class="exit-shop-button"> X </div> 
@@ -14,11 +16,22 @@ window.addEventListener("DOMContentLoaded", () => {
 `;
 
     showUpgradeList();
-
-});
+}
 
 
 function showUpgradeList() {
+    function createUpgradeElement(upgrade: IUpgrade): HTMLLIElement {
+        function onUpgradeClick() {
+            console.log(upgrade);
+        }
+
+        const upgradeLi: HTMLLIElement = document.createElement("li");
+        upgradeLi.innerText = upgrade.name
+        upgradeLi.addEventListener("click", () => onUpgradeClick());
+
+        return upgradeLi;
+    }
+
     const shopList = document.getElementById("shop-list")!;
 
     const upgrades = show.getAvailableUpgrades().map(x => createUpgradeElement(x))
@@ -28,15 +41,8 @@ function showUpgradeList() {
     })
 }
 
-function createUpgradeElement(upgrade: IUpgrade): HTMLLIElement {
-    function onUpgradeClick() {
-        console.log(upgrade);
-    }
 
-    const upgradeLi: HTMLLIElement = document.createElement("li");
-    upgradeLi.innerText = upgrade.name
+/*
+EXIT BUTTON
+ */
 
-    upgradeLi.addEventListener("click", () => onUpgradeClick());
-
-    return upgradeLi;
-}
