@@ -1,17 +1,26 @@
 .shop-window {
     position: absolute;
-    left: 50%;
-    top: 50%;
     background-color: red;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
     /*Place at cneter of screen*/
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url("../assets/sprites/Sprite-0002.png");
+    background-size: cover;
+    font-size: 2rem;
 }
 
 .shop-list {
     background-color: brown;
+}
+
+.upgrade-list-item {
+    padding: 1rem;
+}
+.upgrade-list-item:hover {
+    translate: -2px;
 }

@@ -4,7 +4,6 @@ On load les scripts simplement a partir du import
  */
 import "./buttonClick.ts"
 import "./styles/cookie.css"
-
 import "./shop/shopHtml/shopDisplay.ts"
 /*
 Pour le click handler / observable, il faut sassurer de launcher nos script APRES le script buttonClick pour pas runner no script

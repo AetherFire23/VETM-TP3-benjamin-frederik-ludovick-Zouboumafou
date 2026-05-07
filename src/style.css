@@ -1,0 +1,30 @@
+/*
+ https://www.dafont.com/pixel-3.font
+ krolesz94
+*/
+
+@font-face {
+    font-family: 'MyFont';
+    src: url("./assets/fonts/pixel.ttf") format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: MyFont;
+
+    /* Ne peut pas selectionner du texte*/
+    user-select: none;
+
+    /*Render du pixel-perfect. */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+ol, ul {
+    list-style: none outside none;
+}
+
