@@ -8,6 +8,7 @@ export class CookieCurrencyBase {
     }
 
     incrementCurrency() {
+        console.log(this._name + " just clicked.");
         this._money += 1;
     }
 

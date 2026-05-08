@@ -4,13 +4,13 @@ document.querySelector<HTMLButtonElement>('#cookie-button')!
     .addEventListener("click", onClick);
 
 function onClick() {
-    monsieurState.cookieMoney += 1;
+    monsieurState.increaseMoney();
 }
 
 function rerenderCount() {
     let cookieCounterSpan = document.querySelector("#money-span");
     if(cookieCounterSpan){
-        cookieCounterSpan.innerHTML = String(monsieurState.cookieMoney);
+        cookieCounterSpan.innerHTML = monsieurState.cookieMoney.toString();
     }
 
 }

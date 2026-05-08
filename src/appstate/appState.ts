@@ -1,34 +1,39 @@
+import type {CookieTypes} from "./cookieCurrencies/currencies/cookieENum.ts";
+import type {CookieCurrencyBase} from "./cookieCurrencies/cookieCurrencyBase.ts";
+import {DonutCookieCurrency} from "./cookieCurrencies/currencies/donutCookieCurrency.ts";
+import {NormalCookieCurrency} from "./cookieCurrencies/currencies/normalCookieCurrency.ts";
+
 export class AppState {
     // @ts-ignore
-    private _cookieMoney: number; //cookie money
-    private methods: (() => void)[];
-
-    private currentCookie: number = 1;
+    private _methods: (() => void)[];
+    private _cookies: CookieCurrencyBase[] = [];
+    private _currentCookie: CookieCurrencyBase;
 
     constructor() {
-        this._cookieMoney = 0;
-        this.methods = [];
+        this._methods = [];
+        this._cookies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
+        this._currentCookie = this._cookies[0];
     }
 
-    swapCookieByName() {
-
+    swapCookieByName(cookieType: CookieTypes) {
+        this._currentCookie = this._cookies.find(x => x.name === cookieType);
     }
 
-    get cookieMoney(): number {
-        return this._cookieMoney;
-    }
-
-    set cookieMoney(value: number) {
-        this._cookieMoney = value;
+    increaseMoney() {
+        this._currentCookie.incrementCurrency();
         this.notify();
     }
 
+    get cookieMoney(): number {
+        return this._currentCookie.money;
+    }
+
     public attach(refreshMethod: () => void) {
-        this.methods.push(refreshMethod);
+        this._methods.push(refreshMethod);
     }
 
     public notify() {
-        for (let method of this.methods) {
+        for (let method of this._methods) {
             method();
         }
     }
