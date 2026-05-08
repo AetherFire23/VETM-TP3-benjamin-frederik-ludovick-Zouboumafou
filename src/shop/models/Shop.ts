@@ -12,7 +12,8 @@ export class Shop {
     // En tant que le joueur je veux acheter le shopHtml pour gagner le jeu.
     getAvailableUpgrades(): IUpgrade[] {
         return [
-            {name: "DatUpgrade", price: 12}
+            {name: "DatUpgrade", price: 12},
+            {name: "DatUpgrade2", price: 69},
         ];
     }
 

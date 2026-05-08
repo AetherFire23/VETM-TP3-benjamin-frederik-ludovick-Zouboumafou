@@ -1,18 +1,12 @@
 .shop-window {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-
     /*Place at cneter of screen*/
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url("../assets/sprites/Sprite-0002.png");
-    background-size: cover;
     font-size: 2rem;
+    padding: 1.5rem;
 }
 
 .shop-list {
@@ -22,6 +16,7 @@
 .upgrade-list-item {
     padding: 1rem;
 }
+
 .upgrade-list-item:hover {
-    translate: -2px;
+    translate: -5px 0px;
 }
