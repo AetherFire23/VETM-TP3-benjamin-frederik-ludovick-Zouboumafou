@@ -3,9 +3,15 @@ export class AppState {
     private _cookieMoney: number; //cookie money
     private methods: (() => void)[];
 
+    private currentCookie: number = 1;
+
     constructor() {
         this._cookieMoney = 0;
         this.methods = [];
+    }
+
+    swapCookieByName() {
+
     }
 
     get cookieMoney(): number {

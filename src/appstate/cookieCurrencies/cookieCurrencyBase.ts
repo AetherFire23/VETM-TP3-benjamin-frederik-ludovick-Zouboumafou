@@ -1,0 +1,21 @@
+export class CookieCurrencyBase {
+    private _money: number;
+    private readonly _name: string;
+
+    constructor(money: number, name: string) {
+        this._money = money;
+        this._name = name;
+    }
+
+    incrementCurrency() {
+        this._money += 1;
+    }
+
+    get money(): number {
+        return this._money;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+}
