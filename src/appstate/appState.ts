@@ -1,20 +1,21 @@
 export class AppState {
     // @ts-ignore
-    private cookieMoney: number; //cookie money
+    private _cookieMoney: number; //cookie money
     private methods: (() => void)[];
 
     constructor() {
-        this.cookieMoney = 0;
+        this._cookieMoney = 0;
         this.methods = [];
     }
 
-    get getMoney() {
-        return this.cookieMoney;
+
+    get cookieMoney(): number {
+        return this._cookieMoney;
     }
 
-    set setMoney(num: number) {
-        this.cookieMoney = num;
-        this.notify()
+    set cookieMoney(value: number) {
+        this.notify();
+        this._cookieMoney = value;
     }
 
     public attach(refreshMethod: () => void) {
