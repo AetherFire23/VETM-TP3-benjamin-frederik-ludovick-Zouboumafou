@@ -12,7 +12,7 @@ export class AppState {
     constructor() {
         this._methods = [];
         this._cookies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
-        this._currentCookie = this._cookies[0];
+        this._currentCookie = this._cookies.find(x=> x.name === "Normal");
     }
 
     swapCookieByName(cookieType: CookieTypes) {
