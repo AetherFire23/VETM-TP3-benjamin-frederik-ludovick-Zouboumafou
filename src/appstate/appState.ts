@@ -14,8 +14,8 @@ export class AppState {
     }
 
     set cookieMoney(value: number) {
-        this.notify();
         this._cookieMoney = value;
+        this.notify();
     }
 
     public attach(refreshMethod: () => void) {
