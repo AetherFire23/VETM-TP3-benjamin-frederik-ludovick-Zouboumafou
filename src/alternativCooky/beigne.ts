@@ -5,10 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-
-
-
-
 function showCookie() {
     appState.swapCookieByName("Normal");
     document.getElementById("cookie-button")!.className = "cookie-style";
