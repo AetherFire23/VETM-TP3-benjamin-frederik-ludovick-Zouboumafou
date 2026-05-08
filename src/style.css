@@ -24,6 +24,8 @@ body * {
     /*Render du pixel-perfect. */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+
+        cursor: url('assets/sprites/double-v.png'), auto;
 }
 
 ol, ul {
