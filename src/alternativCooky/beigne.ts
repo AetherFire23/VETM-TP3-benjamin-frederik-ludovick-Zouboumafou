@@ -1,17 +1,23 @@
+import appState from "../appstate/appState.ts";
+
 document.addEventListener("DOMContentLoaded", () => {
-    setInterval(changement, 10000)
+    showCookie()
 
 })
 
 
-function changement() {
-    console.log("beigne")
-    document.getElementById("cookie-button")!.className = "beigne-style";
-    setTimeout(back, 1000)
+
+
+
+function showCookie() {
+    appState.swapCookieByName("Normal");
+    document.getElementById("cookie-button")!.className = "cookie-style";
+    setTimeout(showDonut, 2000)
 }
 
-function back() {
-    console.log("cookie")
-    document.getElementById("cookie-button")!.className = "cookie-style";
 
+function showDonut() {
+    appState.swapCookieByName("Donut");
+    document.getElementById("cookie-button")!.className = "beigne-style";
+    setTimeout(showCookie, 2000)
 }
