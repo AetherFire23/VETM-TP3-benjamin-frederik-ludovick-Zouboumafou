@@ -18,6 +18,18 @@
     padding: 1rem;
 }
 
+.upgade-list-item--owned {
+    color: turquoise;
+}
+
+.upgade-list-item--funds-unsufficient {
+    opacity: 0.3;
+}
+
+.upgade-list-item--has-funds {
+    color: green;
+}
+
 .upgrade-list-item:hover {
     translate: -5px 0px;
 }

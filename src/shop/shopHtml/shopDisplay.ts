@@ -26,24 +26,29 @@ function createUpgradeElement(upgrade: IUpgradeViewModel) {
     upgradeLi.innerText = `${upgrade.name} - ${upgrade.price}`;
 
     // determine in what kind of state it is ind
-    upgradeLi.className = "upgrade-list-item"
+    upgradeLi.className = `upgrade-list-item ${determineUpgradeElementStyle(upgrade.availability)}`
 
     upgradeLi.addEventListener("click", onUpgradeClick);
 
     return upgradeLi;
 }
 
-function determineUpgradeElementStyle(boughtState: BoughtTypes) {
+function determineUpgradeElementStyle(boughtState: BoughtTypes): string {
+    let className: string = "NotEnoughFundsToBuy";
     switch (boughtState) {
         case "NotEnoughFundsToBuy": {
-            
+            className = "upgade-list-item--owned";
             break;
         }
         case "HasFundsButNotOwned": {
+            className = "upgade-list-item--funds-unsufficient";
             break;
         }
         case "OwnedByPlayter": {
+            className = "upgade-list-item--has-funds";
             break;
         }
     }
+
+    return className;
 }

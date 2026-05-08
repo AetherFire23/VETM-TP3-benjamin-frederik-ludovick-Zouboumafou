@@ -16,7 +16,7 @@ export class Shop {
             {
                 name: "DatUpgrade",
                 price: 12,
-                availability: "HasFundsButNotOwned",
+                availability: "NotEnoughFundsToBuy",
                 isBuyable: true
             },
             {
