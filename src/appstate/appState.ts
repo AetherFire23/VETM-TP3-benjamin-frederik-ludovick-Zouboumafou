@@ -8,7 +8,6 @@ export class AppState {
         this.methods = [];
     }
 
-
     get cookieMoney(): number {
         return this._cookieMoney;
     }
