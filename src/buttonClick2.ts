@@ -8,3 +8,10 @@ function onClick() {
     monsieurState.setMoney = 420;
     console.log(monsieurState.getMoney)
 }
+
+function rerenderCount() {
+    console.log("papapapapapappapapap")
+    document.getElementById("hp-div")!.innerText = "5";
+}
+
+monsieurState.attach(rerenderCount)
