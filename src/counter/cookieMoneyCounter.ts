@@ -7,12 +7,20 @@ function onClick() {
     monsieurState.increaseMoney();
 }
 
-function rerenderCount() {
+function renderCookieMoney() {
     let cookieCounterSpan = document.querySelector("#money-span");
-    if(cookieCounterSpan){
+    if (cookieCounterSpan) {
         cookieCounterSpan.innerHTML = monsieurState.cookieMoney.toString();
     }
-
 }
 
-monsieurState.attach(rerenderCount)
+function renderDonutDoughMoney() {
+    let cookieCounterSpan = document.querySelector("#choco-money-span");
+    if (cookieCounterSpan) {
+        cookieCounterSpan.innerHTML = monsieurState.donutDoughMoney.toString();
+    }
+}
+
+
+monsieurState.attach(renderCookieMoney)
+monsieurState.attach(renderDonutDoughMoney)

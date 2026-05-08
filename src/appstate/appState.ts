@@ -12,7 +12,7 @@ export class AppState {
     constructor() {
         this._methods = [];
         this._cookies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
-        this._currentCookie = this._cookies.find(x=> x.name === "Normal");
+        this._currentCookie = this._cookies.find(x=> x.name === "Normal")!;
     }
 
     swapCookieByName(cookieType: CookieTypes) {
@@ -28,8 +28,18 @@ export class AppState {
         this.notify();
     }
 
-    get cookieMoney(): number {
+    get currentCookieMoney(): number {
         return this._currentCookie.money;
+    }
+
+    get cookieMoney(): number {
+        let cookie = this._cookies.find(x=> x.name === "Normal")!;
+        return cookie.money
+    }
+
+    get donutDoughMoney(): number {
+        let cookie = this._cookies.find(x=> x.name === "Donut")!;
+        return cookie.money
     }
 
     public attach(refreshMethod: () => void) {
