@@ -1,19 +1,19 @@
 export class AppState {
     // @ts-ignore
-    private money: number;
+    private cookieMoney: number; //cookie money
     private methods: (() => void)[];
 
     constructor() {
-        this.money = 0;
+        this.cookieMoney = 0;
         this.methods = [];
     }
 
     get getMoney() {
-        return this.money;
+        return this.cookieMoney;
     }
 
     set setMoney(num: number) {
-        this.money = num;
+        this.cookieMoney = num;
         this.notify()
     }
 
