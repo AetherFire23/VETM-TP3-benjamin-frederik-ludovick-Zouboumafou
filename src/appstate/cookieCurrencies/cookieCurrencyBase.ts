@@ -1,8 +1,10 @@
+import type {CookieTypes} from "./currencies/cookieENum.ts";
+
 export class CookieCurrencyBase {
     private _money: number;
     private readonly _name: string;
 
-    constructor(money: number, name: string) {
+    constructor(money: number, name: CookieTypes) {
         this._money = money;
         this._name = name;
     }
