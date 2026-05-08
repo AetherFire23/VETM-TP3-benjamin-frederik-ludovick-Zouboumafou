@@ -13,8 +13,18 @@ export class Shop {
     // En tant que le joueur je veux acheter le shopHtml pour gagner le jeu.
     getAvailableUpgrades(): IUpgradeViewModel[] {
         return [
-            {name: "DatUpgrade", price: 12, availability: "HasFundsButNotOwned", isBuyable: true},
-            {name: "DatUpgrade2", price: 69, availability: "HasFundsButNotOwned", isBuyable: true},
+            {
+                name: "DatUpgrade",
+                price: 12,
+                availability: "HasFundsButNotOwned",
+                isBuyable: true
+            },
+            {
+                name: "DatUpgrade2",
+                price: 69,
+                availability: "HasFundsButNotOwned",
+                isBuyable: true
+            },
         ];
     }
 

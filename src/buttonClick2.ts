@@ -1,12 +1,12 @@
-import monsieurState from "./appstate/appState.ts";
+import appState from "./appstate/appState.ts";
 
 document.querySelector<HTMLButtonElement>('#cookie-button')!
     .addEventListener("click", onClick);
 
 function onClick() {
     console.log("CLick222222! ")
-    monsieurState.setMoney = 420;
-    console.log(monsieurState.getMoney)
+    appState.setMoney = 420;
+    console.log(appState.getMoney)
 }
 
 function rerenderCount() {
@@ -14,4 +14,4 @@ function rerenderCount() {
     document.getElementById("hp-div")!.innerText = "5";
 }
 
-monsieurState.attach(rerenderCount)
+appState.attach(rerenderCount)

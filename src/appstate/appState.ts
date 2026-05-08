@@ -31,5 +31,5 @@ export class AppState {
 /*
 EXPORT GLOBAL UTILISABLE PAR TOUT LE MONDE !@@ :)
  */
-const monsieurState: AppState = new AppState();
-export default monsieurState;
+const appState: AppState = new AppState();
+export default appState;
