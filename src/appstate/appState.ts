@@ -1,22 +1,22 @@
 import type {CookieTypes} from "./cookieCurrencies/currencies/cookieENum.ts";
-import type {CookieCurrencyBase} from "./cookieCurrencies/cookieCurrencyBase.ts";
+import  {type CookieCurrencyBase} from "./cookieCurrencies/cookieCurrencyBase.ts";
 import {DonutCookieCurrency} from "./cookieCurrencies/currencies/donutCookieCurrency.ts";
 import {NormalCookieCurrency} from "./cookieCurrencies/currencies/normalCookieCurrency.ts";
 
 export class AppState {
     // @ts-ignore
     private _methods: (() => void)[];
-    private _cookies: CookieCurrencyBase[] = [];
+    private _cookieCurrencies: CookieCurrencyBase[] = [];
     private _currentCookie: CookieCurrencyBase;
 
     constructor() {
         this._methods = [];
-        this._cookies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
-        this._currentCookie = this._cookies[0];
+        this._cookieCurrencies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
+        this._currentCookie = this._cookieCurrencies[0];
     }
 
     swapCookieByName(cookieType: CookieTypes) {
-        const cookieFound = this._cookies.find(x => x.name === cookieType);
+        const cookieFound = this._cookieCurrencies.find(x => x.name === cookieType);
 
         if (cookieFound !== undefined) {
             this._currentCookie = cookieFound;
@@ -26,6 +26,11 @@ export class AppState {
     increaseMoney() {
         this._currentCookie.incrementCurrency();
         this.notify();
+    }
+
+
+    get cookieCurrencies(): CookieCurrencyBase[] {
+        return this._cookieCurrencies;
     }
 
     get cookieMoney(): number {
