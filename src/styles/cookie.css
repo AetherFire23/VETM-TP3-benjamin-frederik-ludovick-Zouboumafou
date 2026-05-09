@@ -5,5 +5,13 @@
     background-image: url("../assets/sprites/Sprite-0001.png");
 }
 
-.cookie-style:hover {
+/*.cookie-style:hover, .beigne-style:hover {*/
+/*}*/
+
+
+.beigne-style {
+    background-size: cover;
+    width: 14rem;
+    height: 14rem;
+    background-image: url("../assets/sprites/beigne2.png");
 }

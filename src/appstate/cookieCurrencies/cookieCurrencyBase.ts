@@ -2,7 +2,7 @@ import type {CookieTypes} from "./currencies/cookieENum.ts";
 
 export class CookieCurrencyBase {
     private _money: number;
-    private readonly _name: string;
+    private readonly _name: CookieTypes;
 
     constructor(money: number, name: CookieTypes) {
         this._money = money;
@@ -18,7 +18,7 @@ export class CookieCurrencyBase {
         return this._money;
     }
 
-    get name(): string {
+    get name(): CookieTypes {
         return this._name;
     }
 }
