@@ -17,14 +17,15 @@ export class Shop {
         ];
     }
 
-// En tant que le joueur je veux consulter le shopHtml pour acheter des améliorations.
-    //
-    // En tant que le joueur je veux acheter des améliorations dans le shopHtml pour l’augmenter nombre de biscuits.
-    //
-    // En tant que le joueur je veux acheter le shopHtml pour gagner le jeu.
 
-    buyUpgrade(upgrade: UpgradeBase): void {
+    buyUpgrade(upgradeName: string): void {
+        const upgrade = this._possibleUpgrades.find(x => x.name === upgradeName)!;
 
+        if (!upgradeName) {
+            throw new DOMException("upgrade not found!")
+        }
+
+        upgrade.acquireUpgrade();
     }
 
     getAvailableUpgrades(): UpgradeBase[] {

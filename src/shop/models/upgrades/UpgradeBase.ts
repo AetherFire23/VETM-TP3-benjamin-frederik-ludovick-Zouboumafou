@@ -13,9 +13,11 @@ export class UpgradeBase {
 
     acquireUpgrade() {
         this._isAcquired = true;
+        this.applyEffectOnBuy();
     }
 
-    private applyEffectOnClick() {
+    // TODO: program this feature.
+    public applyEffectOnClick() {
     }
 
     protected applyEffectOnBuy() {

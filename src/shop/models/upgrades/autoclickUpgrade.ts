@@ -5,4 +5,9 @@ export class AutoclickUpgrade extends UpgradeBase {
     constructor() {
         super("auto click", new DonutCookieCurrency(10));
     }
+
+
+    protected applyEffectOnBuy() {
+        console.log("Ugprade autolcikc bought!");
+    }
 }

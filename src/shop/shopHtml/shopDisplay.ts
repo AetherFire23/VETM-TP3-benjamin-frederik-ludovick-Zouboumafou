@@ -16,7 +16,8 @@ function rerenderUpgradeList() {
     const existingUpgrades = document.getElementById("shop-list")!
     existingUpgrades.replaceChildren()
 
-    const upgrades = shop.getAvailableUpgrades()
+    // Does not show owned by player !
+    const upgradeHtmlElements = shop.getAvailableUpgrades()
         .map(x => ({
             name: x.name,
             price: x.currencyPrice.money,
@@ -25,7 +26,7 @@ function rerenderUpgradeList() {
         .filter(x => x.availability !== "OwnedByPlayter")
         .map(createUpgradeElement)
 
-    for (let upgrade of upgrades) {
+    for (let upgrade of upgradeHtmlElements) {
         shopList.append(upgrade);
     }
 }
@@ -33,8 +34,8 @@ function rerenderUpgradeList() {
 function determineBoughtType(upgradeBase: UpgradeBase): BoughtTypes {
     if (upgradeBase.isAcquired) return "OwnedByPlayter";
 
-    const playerMoney = appState.cookieCurrencies.find(x => x.name === upgradeBase.currencyPrice.name)!;
-    const hasEnoughCurrency = playerMoney.money >= upgradeBase.currencyPrice.money;
+    const currentSelectedCurrencyMoney = appState.cookieCurrencies.find(x => x.name === upgradeBase.currencyPrice.name)!;
+    const hasEnoughCurrency = currentSelectedCurrencyMoney.money >= upgradeBase.currencyPrice.money;
 
     const boughtType: BoughtTypes = hasEnoughCurrency ? "HasFundsButNotOwned" : "NotEnoughFundsToBuy";
     return boughtType;
@@ -42,7 +43,10 @@ function determineBoughtType(upgradeBase: UpgradeBase): BoughtTypes {
 
 function createUpgradeElement(upgrade: IUpgradeViewModel) {
     function onUpgradeClick() {
-        console.log(upgrade);
+
+        shop.buyUpgrade(upgrade.name)
+
+        rerenderUpgradeList();
     }
 
     const upgradeLi = document.createElement("li");
