@@ -46,6 +46,7 @@ function createUpgradeElement(upgrade: IUpgradeViewModel) {
 
         shop.buyUpgrade(upgrade.name)
 
+
         rerenderUpgradeList();
     }
 
