@@ -10,14 +10,14 @@ function onClick() {
 function renderCookieMoney() {
     let cookieCounterSpan = document.querySelector("#money-span");
     if (cookieCounterSpan) {
-        cookieCounterSpan.innerHTML = monsieurState.cookieMoney.toString();
+        cookieCounterSpan.innerHTML = monsieurState.cookieCurrencies.find(x=> x.name ==="Normal")!.money.toString();
     }
 }
 
 function renderDonutDoughMoney() {
     let cookieCounterSpan = document.querySelector("#choco-money-span");
     if (cookieCounterSpan) {
-        cookieCounterSpan.innerHTML = monsieurState.donutDoughMoney.toString();
+        cookieCounterSpan.innerHTML = monsieurState.cookieCurrencies.find(x=> x.name ==="Donut")!.money.toString();
     }
 }
 

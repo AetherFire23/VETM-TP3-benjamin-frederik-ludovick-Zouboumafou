@@ -16,7 +16,7 @@ export class AppState {
     }
 
     swapCookieByName(cookieType: CookieTypes) {
-        const cookieFound = this._cookieCurrencies.find(x => x.name === cookieType);
+        const cookieFound = this._cookieCurrencies.find(x => x.name === cookieType)!;
 
         if (cookieFound !== undefined) {
             this._currentCookie = cookieFound;
