@@ -2,19 +2,42 @@ import "../../styles/shop.css"
 import {Shop} from "../models/Shop.ts";
 import type {IUpgradeViewModel} from "../models/IUpgradeViewModel.ts";
 import type {BoughtTypes} from "../models/BoughtTypesEnum.ts";
+import type {UpgradeBase} from "../models/upgrades/UpgradeBase.ts";
+import appState from "../../appstate/appState.ts";
 
 const shop: Shop = new Shop();
 
 rerenderUpgradeList()
 
+appState.attach(rerenderUpgradeList)
+
 function rerenderUpgradeList() {
     const shopList = document.getElementById("shop-list")!;
+    const existingUpgrades = document.getElementById("shop-list")!
+    existingUpgrades.replaceChildren()
 
-    const upgrades = shop.getAvailableUpgrades().map(createUpgradeElement);
+    const upgrades = shop.getAvailableUpgrades()
+        .map(x => ({
+            name: x.name,
+            price: x.currencyPrice.money,
+            availability: determineBoughtType(x)
+        } as IUpgradeViewModel))
+        .filter(x => x.availability !== "OwnedByPlayter")
+        .map(createUpgradeElement)
 
     for (let upgrade of upgrades) {
         shopList.append(upgrade);
     }
+}
+
+function determineBoughtType(upgradeBase: UpgradeBase): BoughtTypes {
+    if (upgradeBase.isAcquired) return "OwnedByPlayter";
+
+    const playerMoney = appState.cookieCurrencies.find(x => x.name === upgradeBase.currencyPrice.name)!;
+    const hasEnoughCurrency = playerMoney.money >= upgradeBase.currencyPrice.money;
+
+    const boughtType: BoughtTypes = hasEnoughCurrency ? "HasFundsButNotOwned" : "NotEnoughFundsToBuy";
+    return boughtType;
 }
 
 function createUpgradeElement(upgrade: IUpgradeViewModel) {
@@ -23,29 +46,26 @@ function createUpgradeElement(upgrade: IUpgradeViewModel) {
     }
 
     const upgradeLi = document.createElement("li");
-    upgradeLi.innerText = `${upgrade.name} - ${upgrade.price}`;
+    upgradeLi.innerText = `${upgrade.name} - ${upgrade.price} - ${upgrade.availability}`;
 
     // determine in what kind of state it is ind
-    upgradeLi.className = `upgrade-list-item ${determineUpgradeElementStyle(upgrade.availability)}`
+    upgradeLi.className = `${determineUpgradeElementStyle(upgrade.availability)}`
 
     upgradeLi.addEventListener("click", onUpgradeClick);
 
     return upgradeLi;
 }
 
+
 function determineUpgradeElementStyle(boughtState: BoughtTypes): string {
-    let className: string = "NotEnoughFundsToBuy";
+    let className: string = "upgrade-list-item ";
     switch (boughtState) {
         case "NotEnoughFundsToBuy": {
-            className = "upgade-list-item--owned";
+            className += "upgrade-list-item--unsufficient";
             break;
         }
         case "HasFundsButNotOwned": {
-            className = "upgade-list-item--funds-unsufficient";
-            break;
-        }
-        case "OwnedByPlayter": {
-            className = "upgade-list-item--has-funds";
+            className += "upgade-list-item--funds-unsufficient";
             break;
         }
     }
