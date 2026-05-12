@@ -11,7 +11,8 @@ export class HealthPoint extends CookieCurrencyBase {
         this._money -= 1;
         if (this._money===0){
             alert("you loose !!!! \n\n" +
-                "losser")
+                "losser");
+            location.reload();
         }
     }
 }
