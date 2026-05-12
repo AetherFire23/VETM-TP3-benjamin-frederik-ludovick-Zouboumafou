@@ -9,7 +9,7 @@ function cookie() {
     console.log("cookie");
     appState.swapCookieByName("Normal");
     document.getElementById("cookie-button")!.className = "cookie-style";
-    if (Math.floor(Math.random() * 1)===0) {//1 chance sur 10 d'avoir un oignon
+    if (Math.floor(Math.random() * 8)===0) {//1 chance sur 8 d'avoir un oignon
         setTimeout(oignon, 10000);
     }
     else {

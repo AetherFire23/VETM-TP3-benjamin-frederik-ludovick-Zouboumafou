@@ -12,7 +12,7 @@ export class AppState {
 
     constructor() {
         this._methods = [];
-        this._cookieCurrencies = [new DonutCookieCurrency(), new NormalCookieCurrency(), new HealthPoint(10)]
+        this._cookieCurrencies = [new DonutCookieCurrency(), new NormalCookieCurrency(), new HealthPoint(69)]
         this._currentCookie = this._cookieCurrencies[0];
     }
 
