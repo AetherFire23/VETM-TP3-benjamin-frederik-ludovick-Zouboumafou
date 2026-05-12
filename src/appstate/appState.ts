@@ -1,7 +1,8 @@
 import type {CookieTypes} from "./cookieCurrencies/currencies/cookieENum.ts";
-import  {type CookieCurrencyBase} from "./cookieCurrencies/cookieCurrencyBase.ts";
+import {type CookieCurrencyBase} from "./cookieCurrencies/cookieCurrencyBase.ts";
 import {DonutCookieCurrency} from "./cookieCurrencies/currencies/donutCookieCurrency.ts";
 import {NormalCookieCurrency} from "./cookieCurrencies/currencies/normalCookieCurrency.ts";
+import {HealthPoint} from "./cookieCurrencies/currencies/HealthPoint.ts";
 
 export class AppState {
     // @ts-ignore
@@ -11,7 +12,7 @@ export class AppState {
 
     constructor() {
         this._methods = [];
-        this._cookieCurrencies = [new DonutCookieCurrency(), new NormalCookieCurrency()]
+        this._cookieCurrencies = [new DonutCookieCurrency(), new NormalCookieCurrency(), new HealthPoint(10)]
         this._currentCookie = this._cookieCurrencies[0];
     }
 

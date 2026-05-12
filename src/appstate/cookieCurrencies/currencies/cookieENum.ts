@@ -1,1 +1,1 @@
-export type CookieTypes = "Normal" | "Donut";
+export type CookieTypes = "Normal" | "Donut" | "Oignon";

@@ -15,3 +15,10 @@
     height: 14rem;
     background-image: url("../assets/sprites/beigne2.png");
 }
+
+.oignon-style {
+     background-size: cover;
+     width: 14rem;
+     height: 14rem;
+     background-image: url("../assets/sprites/oignon.png");
+ }
