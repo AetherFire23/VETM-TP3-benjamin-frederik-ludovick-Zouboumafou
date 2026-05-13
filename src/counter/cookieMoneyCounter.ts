@@ -20,7 +20,14 @@ function renderDonutDoughMoney() {
         cookieCounterSpan.innerHTML = monsieurState.cookieCurrencies.find(x=> x.name === "Donut")!.money.toString();
     }
 }
+function renderOignonDoughMoney() {
+    let cookieCounterSpan = document.querySelector("#oignon-money-span");
+    if (cookieCounterSpan) {
+        cookieCounterSpan.innerHTML = monsieurState.cookieCurrencies.find(x=> x.name === "Oignon")!.money.toString();
+    }
+}
 
 
 monsieurState.attach(renderCookieMoney)
 monsieurState.attach(renderDonutDoughMoney)
+monsieurState.attach(renderOignonDoughMoney)
