@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <link rel="stylesheet" href="/src/style.css"/>
     <link rel="stylesheet" href="/src/styles/cookie.css"/>
+    <link rel="stylesheet" href="/src/styles/achievementModal.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>coocie-cliccer</title>
 </head>
@@ -19,7 +20,7 @@
         <div id="hp-div">
             <span id="hp-span"></span>
         </div>
-        <div id="cookie-button" class="cookie-style"> </div>
+        <div id="cookie-button" class="cookie-style"></div>
         <div>
             <div>play</div>
             <div>stop</div>
@@ -35,10 +36,17 @@
             </ul>
         </div>
     </div>
+    <div id="modal-div" class="modal-screen" style="display: none">
+        <div class="modal-upper-banner"></div>
+        <div id="modal-content" class="modal-content" >
+            le mauve ca te fait bien bebe
+        </div>
+    </div>
 </div>
 <script type="module" src="/src/main.ts"></script>
 <script type="module" src="/src/shop/shopHtml/shopDisplay.ts"></script>
 <script type="module" src="/src/counter/cookieMoneyCounter.ts"></script>
 <script type="module" src="src/alternativCooky/beigne.ts"></script>
+<script type="module" src="src/achievements/achivementTrackin.ts"></script>
 </body>
 </html>
