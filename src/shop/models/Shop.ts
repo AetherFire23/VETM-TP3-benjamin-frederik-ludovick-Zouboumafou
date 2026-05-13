@@ -1,34 +1,35 @@
 // @ts-ignore
 import type {IUpgradeViewModel} from "./IUpgradeViewModel.ts";
-
-let upgrades: IUpgradeViewModel[] = [
-    {
-        name: "DatUpgrade",
-        price: 12,
-        availability: "NotEnoughFundsToBuy",
-        isBuyable: true
-    },
-    {
-        name: "DatUpgrade2",
-        price: 69,
-        availability: "HasFundsButNotOwned",
-        isBuyable: true
-    },
-];
+import type {UpgradeBase} from "./upgrades/UpgradeBase.ts";
+import {BetterClickUpgrade} from "./upgrades/betterClickUpgrade.ts";
+import {AutoclickUpgrade} from "./upgrades/autoclickUpgrade.ts";
 
 
 export class Shop {
     // TODO: Prendre en constucctor le player pis ses upgrades
+
+    private _possibleUpgrades: UpgradeBase[] = [];
+
     constructor() {
+        this._possibleUpgrades = [
+            new BetterClickUpgrade(),
+            new AutoclickUpgrade(),
+        ];
     }
 
-// En tant que le joueur je veux consulter le shopHtml pour acheter des améliorations.
-    //
-    // En tant que le joueur je veux acheter des améliorations dans le shopHtml pour l’augmenter nombre de biscuits.
-    //
-    // En tant que le joueur je veux acheter le shopHtml pour gagner le jeu.
-    getAvailableUpgrades(): IUpgradeViewModel[] {
-        return upgrades;
+
+    buyUpgrade(upgradeName: string): void {
+        const upgrade = this._possibleUpgrades.find(x => x.name === upgradeName)!;
+
+        if (!upgradeName) {
+            throw new DOMException("upgrade not found!")
+        }
+
+        upgrade.acquireUpgrade();
+    }
+
+    getAvailableUpgrades(): UpgradeBase[] {
+        return this._possibleUpgrades;
     }
 
     buyStore() {
