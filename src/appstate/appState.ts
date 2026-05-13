@@ -28,6 +28,11 @@ export class AppState {
         this.notify();
     }
 
+    addSpecificAmountOfCookies(amount: number) {
+        const cookiesObject = this._currentCookie = this._cookies.find(x=> x.name === "Normal")!;
+        cookiesObject.money+= amount;
+    }
+
     get currentCookieMoney(): number {
         return this._currentCookie.money;
     }
