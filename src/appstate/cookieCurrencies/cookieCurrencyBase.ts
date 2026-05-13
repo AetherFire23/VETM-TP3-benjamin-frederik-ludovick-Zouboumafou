@@ -23,6 +23,10 @@ export class CookieCurrencyBase {
         return this._money;
     }
 
+    set money(value: number) {
+        this._money = value;
+    }
+
     get name(): CookieTypes {
         return this._name;
     }

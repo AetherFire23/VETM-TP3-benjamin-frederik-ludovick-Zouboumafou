@@ -33,6 +33,11 @@ export class AppState {
     get cookieCurrencies(): CookieCurrencyBase[] {
         return this._cookieCurrencies;
     }
+    addSpecificAmountOfCookies(amount: number) {
+        const cookiesObject = this._currentCookie = this._cookieCurrencies.find(x=> x.name === "Normal")!;
+        cookiesObject.money+= amount;
+        this.notify();
+    }
 
     get cookieMoney(): number {
         return this._currentCookie.money;
