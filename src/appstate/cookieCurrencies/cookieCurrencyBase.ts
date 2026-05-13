@@ -12,6 +12,11 @@ export class CookieCurrencyBase {
     incrementCurrency() {
         console.log(this._name + " just clicked.");
         this._money += 1;
+        if (this._money % 1000 > 0 && this._money % 1000 < 3 && this._money > 4) {
+            if (confirm("Yon won the game\ndo tou want to continue ?") == false) {
+                location.reload();
+            }
+        }
     }
 
     get money(): number {
