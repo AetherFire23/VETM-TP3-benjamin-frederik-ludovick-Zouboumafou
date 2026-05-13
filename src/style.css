@@ -62,4 +62,5 @@ ol, ul {
 
 #streak-container {
     color: red;
+    visibility: hidden;
 }

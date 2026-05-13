@@ -34,8 +34,9 @@ export class AppState {
         return this._cookieCurrencies;
     }
     addSpecificAmountOfCookies(amount: number) {
-        const cookiesObject = this._currentCookie = this._cookies.find(x=> x.name === "Normal")!;
+        const cookiesObject = this._currentCookie = this._cookieCurrencies.find(x=> x.name === "Normal")!;
         cookiesObject.money+= amount;
+        this.notify();
     }
 
     get cookieMoney(): number {
