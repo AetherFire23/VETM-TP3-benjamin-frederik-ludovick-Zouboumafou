@@ -4,14 +4,36 @@ Nous faisons un jeu de cooke clicker où il est possible de cliquer sur un biscu
 
 ## Infos
 
-membres de lequipe
+### Membres de lequipe
 Benjamin Turcotte 2243891
 
 Frederik richer balthazard 2410658
 
 Ludovick Tanguay 2410734
 
+### Github 
+
 https://github.com/AetherFire23?tab=repositories
 
+### Jira
 [https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/boards/1](https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/summary?atlOrigin=eyJpIjoiZmRhMGEyODIyMTU3NDE4M2EyZjM4YmE2MWFjYjdjNjMiLCJwIjoiaiJ9)
 
+#### Dates de sprint
+
+Sprint #1 : 1er mai au 13mai
+
+## Liens cloud vers videos
+
+### demarrage
+
+https://lecegeplimoilou-my.sharepoint.com/:v:/g/personal/2410658_cegeplimoilou_ca/IQCkbXkQ02tlSYFmXzfvgUIpAQvDtQURlnlkkpiKUe10mV8?e=NsVsrF
+
+### daily 
+https://lecegeplimoilou-my.sharepoint.com/:v:/g/personal/2410658_cegeplimoilou_ca/IQC9-nmvllbRTKCjE2RwTr1nAQiWU-eNSEfYHfe31wW2d1E?e=seEYIh
+
+### daily 2
+https://lecegeplimoilou-my.sharepoint.com/:v:/g/personal/2410658_cegeplimoilou_ca/IQCzEhmUKquESpy9YuFb-QFBAaQQCapFeeBG39gb5f3mLt8?e=CWHRMz
+
+### review
+
+https://lecegeplimoilou-my.sharepoint.com/:v:/g/personal/2410658_cegeplimoilou_ca/IQAcvp0ML-5JSaUZZhIU0FUvAX21JPB3RYRTqf953wrsX1Q?e=afDgAV
