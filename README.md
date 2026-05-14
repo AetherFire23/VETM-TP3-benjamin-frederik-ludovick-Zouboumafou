@@ -4,16 +4,23 @@ Nous faisons un jeu de cooke clicker où il est possible de cliquer sur un biscu
 
 ## Infos
 
-membres de lequipe
+### Membres de lequipe
 Benjamin Turcotte 2243891
 
 Frederik richer balthazard 2410658
 
 Ludovick Tanguay 2410734
 
+### Github 
+
 https://github.com/AetherFire23?tab=repositories
 
+### Jira
 [https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/boards/1](https://monsieurricher64.atlassian.net/jira/software/projects/SCRUM/summary?atlOrigin=eyJpIjoiZmRhMGEyODIyMTU3NDE4M2EyZjM4YmE2MWFjYjdjNjMiLCJwIjoiaiJ9)
+
+#### Dates de sprint
+
+Sprint #1 : 1er mai au 13mai
 
 ## Liens cloud vers videos
 
