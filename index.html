@@ -22,10 +22,7 @@
         </div>
         <div id="cookie-button" class="cookie-style"></div>
         <div>
-            <div>play</div>
-            <div>stop</div>
-            <div>choose</div>
-            <div>help</div>
+            <div><a id="help-button">help</a></div>
         </div>
 
         <div id ="streak-container">
@@ -50,6 +47,20 @@
         </div>
     </div>
 </div>
+
+<div id="technical-support-modal">
+    <button id="technical-support-close">Fermer</button>
+    <h1>Bienvenue au soutien technique de zouboumafou</h1>
+    <h3>Courriel du soutien technique : appearancebooking@krattbrothers.com </h3>
+    <h3>Téléphone : 911</h3>
+    <audio muted id="technical-support-audio">
+        <source src="src/assets/audio/Zooboomafoo.opus" type="audio/ogg; codecs=opus">
+    </audio>
+</div>
+
+<audio autoplay loop id="game-theme-song">
+    <source src="src/assets/audio/Project_1.mp3"  type="audio/mpeg">
+</audio>
 <script type="module" src="/src/main.ts"></script>
 <script type="module" src="/src/shop/shopHtml/shopDisplay.ts"></script>
 <script type="module" src="/src/counter/cookieMoneyCounter.ts"></script>
@@ -57,5 +68,6 @@
 <script type="module" src="src/alternativCooky/beigne.ts"></script>
 <script type="module" src="src/achievements/achivementTrackin.ts"></script>
 <script type="module" src="src/streak/streakCombo.ts"></script>
+<script type="module" src="src/technicalSupport/technicalSupport.ts"></script>
 </body>
 </html>

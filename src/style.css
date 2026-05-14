@@ -64,3 +64,15 @@ ol, ul {
     color: red;
     visibility: hidden;
 }
+
+#technical-support-modal{
+    position: absolute;
+    background-color: saddlebrown;
+    top: 40%;
+    left: 30%;
+    visibility: hidden;
+    width: 35%;
+    padding : 20px;
+
+}
+
